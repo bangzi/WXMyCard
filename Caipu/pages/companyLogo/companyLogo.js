@@ -7,6 +7,7 @@ Page({
 
   addCompanyLogo:function(e) {
       var tempFilePaths;
+      var that = this;
 
       wx.chooseImage({
         count: 9, // 最多可以选择的图片张数，默认9
@@ -15,8 +16,8 @@ Page({
         success: function(res){
           tempFilePaths = res.tempFilePaths;
           console.log('获得的图片的路径：' + tempFilePaths);
-          this.setData ({
-            //  srcLogoUrl: res.tempFilePaths
+          that.setData ({
+             srcLogoUrl: res.tempFilePaths
           })
         },
         fail: function() {
@@ -25,12 +26,7 @@ Page({
         complete: function() {
           // complete
         },
-      }),
-
-      console.log('获得的图片的路径1：' + tempFilePaths);
-      this.setData ({
-             srcLogoUrl: tempFilePaths
-          })
+      })
   }
 
 })
