@@ -1,0 +1,45 @@
+/**index.wxss**/
+
+.row {
+    display: flex;
+    flex-direction: row;
+    flex: 0;
+    /*justify-content: space-around;*/
+    justify-content: space-between;
+    align-items: left;
+    flex-wrap: wrap;
+}
+
+.item_size {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 186rpx;
+    width: 170rpx;
+    /*border-bottom: 1px solid #dadada;
+    border-left: 1px solid #dadada;
+    border-right: 1px solid #dadada;*/
+}
+
+.img {
+    width: 70rpx;
+    height: 70rpx;
+    margin-top: 1rpx;
+}
+
+.text {
+    font-size: 14px;
+    align-content: flex-end;
+    margin-top: 15rpx;
+    /*margin-bottom: 15rpx;*/
+    color: dimgray
+}
+
+.line {
+    width: 2000rpx;
+    height: 1rpx;
+    margin-top: 25rpx;
+    margin-bottom: 2rpx;
+    background-color: darkgray;
+}

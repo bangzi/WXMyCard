@@ -1,0 +1,24 @@
+<!--index.wxml-->
+<view class="container">
+<scroll-view>
+ <view  bindtap="bindViewTap" class="userinfo">
+    <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+    <text class="userinfo-nickname">{{userInfo.nickName}}     </text>
+ </view>
+  <view class="info_list" >
+    <navigator wx:for="{{userListInfo}}" url="{{item.url}}">
+        <view class="weui_cell">
+            <view class="weui_cell_hd"><image src="{{item.icon}}"></image></view>
+            <view class="weui_cell_bd">
+                <view class="weui_cell_bd_p"> {{item.text}} </view>
+            </view>
+            <view wx:if="{{item.isunread}}" class="badge">{{item.unreadNum}}</view>
+            <view wx:if="{{item.isOpen}}" class="weui_cell_switch">
+               <switch type="switch"  checked bindchange="switchEventHandle" />
+            </view>
+            <view wx:if="{{!item.isOpen}}"><view class="with_arrow"></view></view>
+        </view>
+    </navigator>
+  </view>
+  </scroll-view>
+</view>

@@ -1,0 +1,45 @@
+{
+    "pages": [
+        "pages/discovery/discovery",
+        "pages/index/index",
+        "pages/search/search",
+        "pages/list/list",
+        "pages/content/content",
+        "pages/result/result",
+        "pages/my/index",
+        "pages/card/card",
+        "pages/feedback/feedback",
+        "pages/companyLogo/companyLogo"
+    ],
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#37363b",
+        "navigationBarTextStyle": "white"
+    },
+    "tabBar": {
+        "color": "#999",
+        "selectedColor": "#2196f3",
+        "backgroundColor": "#f7f7f7",
+        "borderStyle": "white",
+        "list": [{
+            "pagePath": "pages/discovery/discovery",
+            "text":"主页",
+            "iconPath": "./res/img/tabbar/discovery.png",
+            "selectedIconPath": "./res/img/tabbar/discovery_selected.png"
+        }, {
+            "pagePath": "pages/index/index",
+            "text": "分类",
+            "iconPath": "./res/img/tabbar/menu.png",
+            "selectedIconPath": "./res/img/tabbar/menu_selected.png"
+        }, {
+            "pagePath": "pages/my/index",
+            "text":"我的",
+            "iconPath": "./res/img/tabbar/search.png",
+            "selectedIconPath": "./res/img/tabbar/search_selected.png"
+        }]
+    },
+    "networkTimeout": {
+        "request": 10000,
+        "downloadFile": 10000
+    }
+}

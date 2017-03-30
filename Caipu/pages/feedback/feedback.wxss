@@ -1,0 +1,37 @@
+
+.describe-title {
+    display: flex;
+    height: 50rpx;
+    size: 10px;
+    margin-left: 5px;
+}
+.describe-info {
+    display: flex;
+    left: 10px;
+    /*right: 5px;*/
+    margin-right: 5px;
+    height: 200px;
+    width: 96%;  
+}
+.mail-title {
+    display: flex;
+    height: 10px;
+    size: 15px;
+    margin-left: 5px;  
+}
+
+
+.mail-info {
+    left: 10px;
+    /*right: 5px;*/
+    margin-right: 5px;
+     width: 96%; 
+    size: 8px;
+    top: 20px;
+ 
+}
+.saveButton {
+    margin-top: -40px;
+    margin-left: 100px;
+    margin-right: 100px;
+}

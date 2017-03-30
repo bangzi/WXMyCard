@@ -1,0 +1,37 @@
+.view_text {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    height: 50px;
+}
+
+.title {
+    display: flex;
+    height: 50rpx;
+    width: 25%;
+    margin-left: 5px;
+    margin-right: 0px;
+}
+
+.write_title {
+    display: flex;
+    margin-left: 10px;
+    /*right: 5px;*/
+    margin-right: 5px;
+    height: 50rpx;
+    size: 8px;
+}
+.checkbox {
+    display: inline-block;
+    flex-direction: row;
+    left: 50rpx;
+    size: 50px;
+    margin-left: 5px;
+}
+
+.saveButton {
+    margin-top: -150px;
+    margin-left: 100px;
+    margin-right: 100px;
+}

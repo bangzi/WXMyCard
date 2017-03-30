@@ -1,0 +1,6 @@
+<view>
+  <button class="saveButton" bindtap="addCompanyLogo">
+  点击添加logo
+  </button>
+  <image src="{{srcLogoUrl}}" style="width: 200px; height: 200px; background-color: #eeeeee;"></image>
+</view>

@@ -1,0 +1,33 @@
+
+<view class="view-request-fail" wx:if="{{request_fail}}">
+    <text class="text-request-fail">网络或服务器错误，请检查网络...</text>
+</view>
+<view wx:if="{{!request_fail}}">
+<view class="main-view-search">
+    <view class="view-search">
+        <input class="input" placeholder-class="input-placeholder" placeholder="输入食材或菜名" bindinput="bindSearchInput" />
+        <image class="button" src="../../res/img/search.png" bindtap="tapSearch" />
+    </view>
+    <view class="request_null" >
+        <text hidden="{{nullHidden}}">没有搜索结果？</text>
+    </view>
+    <loading hidden="{{loadingHidden}}">{{lodingInfo}}</loading>
+</view>
+    <scroll-view scroll-y="true" bindscrolltolower="lower" style="height:{{windowHeight}};" lower-threshold="200">
+    <view wx:for="{{arr_res}}">
+         <button class="concern" bindtap="concernEventHandle" wx:if="{{isConcern}}">取消</button>
+         <button class="concern" bindtap="concernEventHandle" wx:if="{{!isConcern}}">关注</button>
+         <navigator url="{{url}}?id={{item.id}}&name={{item.name}}" class="home_cell">
+            <view class="main">
+                <image class="img" src="http://tnfs.tngou.net/image{{item.img}}" />
+                <view class="text">
+                    <text class="title">{{item.name}}</text>
+                    <text class="subtitle">{{item.keywords}}</text>
+                </view>
+            </view>
+         <view class="bottomLine"></view>
+        </navigator>
+    </view>
+    </scroll-view>
+    <loading hidden="{{loadingHidden}}">{{lodingInfo}}</loading>
+</view>

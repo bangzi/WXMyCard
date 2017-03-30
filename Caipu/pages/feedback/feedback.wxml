@@ -1,0 +1,17 @@
+<view class="feedback=view" style="height:{{windowHeight}};">
+   <view wx:for="{{userListInfo}}">
+    <view wx:if="{{item.nowtype}}">
+      <text class="describe-title">{{item.text}}</text>
+      <textarea class="describe-info" bindblur="bindTextAreaBlur"  placeholder="{{item.placeholderLabel}}" maxlength="309"  />
+     </view>
+    <view wx:if="{{!item.nowtype}}">
+        <text class="mail-title">{{item.text}}</text>
+        <textarea class="mail-info" bindblur="bindTextAreaBlur" placeholder="{{item.placeholderLabel}}" maxlength="30"  />
+      </view>
+    </view>
+  <view>
+    <button class="saveButton" bindtap="saveEventHandle">
+      提交
+    </button>
+  </view> 
+</view>
