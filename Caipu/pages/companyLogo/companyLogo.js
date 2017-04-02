@@ -53,7 +53,22 @@ Page({
         console.log('图片的路径：' + savedFilePath)
       }
     });
-
+    
+    wx.request({
+      url: 'https://URL',
+      data: {},
+      method: 'POST', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
+      // header: {}, // 设置请求的 header
+      success: function(res){
+        // success
+      },
+      fail: function(res) {
+        // fail
+      },
+      complete: function(res) {
+        // complete
+      }
+    })
 
   }
 
