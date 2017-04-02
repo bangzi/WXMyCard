@@ -45,9 +45,10 @@
 }
 
 .img {
-    width: 120rpx;
-    height: 120rpx;
+    width: 100rpx;
+    height: 100rpx;
     margin-left: 20rpx;
+    margin-top: 20rpx;
     border-radius: 10%;
 }
 
@@ -60,12 +61,16 @@
 }
 
 .title {
+    margin-left: 100px;
+    margin-top:-70px;
     font-size: 20px;
     color: #000;
 }
 
 .subtitle {
     font-size: 18px;
+    margin-left: 100px;
+    margin-top:-30px;
     color: #999;
 }
 

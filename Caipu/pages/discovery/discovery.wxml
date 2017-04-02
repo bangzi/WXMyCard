@@ -15,18 +15,16 @@
 </view>
     <scroll-view scroll-y="true" bindscrolltolower="lower" style="height:{{windowHeight}};" lower-threshold="200">
     <view wx:for="{{arr_res}}">
-         <button class="concern" bindtap="concernEventHandle" wx:if="{{isConcern}}">取消</button>
-         <button class="concern" bindtap="concernEventHandle" wx:if="{{!isConcern}}">关注</button>
-         <navigator url="{{url}}?id={{item.id}}&name={{item.name}}" class="home_cell">
-            <view class="main">
-                <image class="img" src="http://tnfs.tngou.net/image{{item.img}}" />
+          <navigator url="{{url}}?cardid={{item.cardid}}&openid={{openid}}" class="home_cell">
+           <view class="head">
+        <image class="img" mode="aspectFill" src="/res/img/tabbar/discovery.png" />
+    </view>
                 <view class="text">
-                    <text class="title">{{item.name}}</text>
-                    <text class="subtitle">{{item.keywords}}</text>
+                    <text class="title">{{item.username}}</text>
+                    <text class="subtitle">{{item.company}}</text>
                 </view>
-            </view>
          <view class="bottomLine"></view>
-        </navigator>
+      </navigator>
     </view>
     </scroll-view>
     <loading hidden="{{loadingHidden}}">{{lodingInfo}}</loading>
