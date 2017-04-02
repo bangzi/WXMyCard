@@ -44,11 +44,11 @@ App({
     },
     globalData: {
         // userInfo:null
-        globalUrl: "http://www.tngou.net/api/cook/",
-        listName: null,
-        listId: null,
-        contentName:null,
-        contentId: null,
+        globalUrl: 'http://viakiba.cn/wxcard/card/',
+        classifyid: null,
+        openid: null,
+        pagenum:null,
+        pagesize: null,
         result:[]
 
     }

@@ -1,0 +1,46 @@
+<view class="section">
+ 
+    <view class="flex-wrp" style="height: 30px ;flex-direction:column;">
+     <view class="head">
+    <image class="userimage" style="width: 50px; height: 50px; background-color: #eeeeee;" mode="aspectFill" src="/res/img/tabbar/discovery.png" />
+      </view>
+      <view class="username">
+        <text class="user_text" style="font-size:30px">名字：{{arr_res.username}}</text>
+        <view class="line" />
+      </view>
+      <view class="profession">
+        <text class="profession_text" style="font-size:30px">专业：{{arr_res.profession}}</text>
+      </view>
+      <view class="carddescribe">
+        <text class="carddescribe_text" style="font-size:30px">描述：{{arr_res.carddescribe}}</text>
+      </view>
+      <view class="company">
+        <text class="company_text" style="font-size:30px">公司：{{arr_res.company}}</text>
+      </view>
+      <view class="address">
+        <text class="address_text" style="font-size:30px">地址：{{arr_res.address}}</text>
+      </view>
+      <view class="qqnumber">
+        <text class="qqnumber_text" style="font-size:30px">QQ：{{arr_res.qqnumber}}</text>
+      </view>
+      <view class="wechatnumber">
+        <text class="wechatnumber_text" style="font-size:30px">微信：{{arr_res.wechatnumber}}</text>
+      </view>
+      <view class="phonenumber">
+        <text class="phonenumber_text" style="font-size:30px">电话：{{arr_res.phonenumber}}</text>
+      </view>
+      <view class="telephonenumber">
+        <text class="telephonenumber_text" style="font-size:30px">固定电话：{{arr_res.telephonenumber}}</text>
+      </view>
+      <view class="faxnumber">
+        <text class="faxnumber_text" style="font-size:30px">传真：{{arr_res.faxnumber}}</text>
+      </view>
+      <view class="website">
+        <text class="website_text" style="font-size:30px">网址：{{arr_res.website}}</text>
+      </view>
+      <view class="mail">
+        <text class=" e-mail_text" style="font-size:30px"> e-mail：{{arr_res.mail}}</text>
+      </view>
+    </view>
+
+</view>

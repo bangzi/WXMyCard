@@ -1,0 +1,10 @@
+.head{
+  display:flex;
+  justify-content:center;  
+}
+.section{
+ display:flex; 
+  justify-content:center;   
+}
+
+
