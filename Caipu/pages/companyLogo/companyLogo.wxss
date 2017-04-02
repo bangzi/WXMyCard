@@ -9,10 +9,14 @@
 }
 
 .logoImage {
-    margin-top: 10px;
+    margin-top: 20px;
     width: 80px; 
     height: 80px; 
     /*background-repeat: no-repeat;*/
     background-color: #eeeeee;
     border-radius: 5%;
+}
+
+.uploadLogoButton {
+    margin-top: 20px;
 }

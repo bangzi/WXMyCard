@@ -1,6 +1,12 @@
 <view class="logoView">
-  <button bindtap="addCompanyLogo" class="addLogoButton">
+  <image src="{{srcLogoUrl}}" class="logoImage"></image>
+  <button wx:if="{{!isExist}}" bindtap="addCompanyLogo" class="addLogoButton">
   点击添加logo
   </button>
-  <image src="{{srcLogoUrl}}" class="logoImage"></image>
+  <button wx:if="{{isExist}}" bindtap="addCompanyLogo" class="addLogoButton">
+  点击更改logo
+  </button>
+  <button bindtap="uploadCompanyLogo" class="uploadLogoButton">
+  保存我的logo  
+  </button>
 </view>
