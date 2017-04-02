@@ -3,6 +3,8 @@ var app = getApp()
 Page({
   data:{
     isEdit:false,
+    isAlertViewHidden:true,
+    alertContent:'',
     windowHeight: "700px",
     username:"",
     profession:"",
@@ -21,7 +23,8 @@ Page({
         text: '姓名：',
         nowtype: false,
         placeholderLabel: '请输入姓名',
-        typeid:'username'
+        typeid:'username',
+        inputValue: ''
       }, {
         text: '性别：',
         placeholderLabel: '请输入性别',
@@ -32,48 +35,150 @@ Page({
         text: '职称：',
         nowtype: false,       
         placeholderLabel: '请输入职称',
-        typeid:'profession'
+        typeid:'profession',
+        inputValue: ''
       }, {
         text: '公司：',
         nowtype: false,
         placeholderLabel: '请输入公司',
-        typeid:'company'
+        typeid:'company',
+        inputValue: ''
       }, {
         text: '地址：',
         nowtype: false,
         placeholderLabel: '请输入地址',
-        typeid:'address'
+        typeid:'address',
+        inputValue: ''
       }, {
         text: 'QQ号：',
         nowtype: false,
         placeholderLabel: '请输入QQ号',
-        typeid:'qqnumber'
+        typeid:'qqnumber',
+        inputValue: ''
       }, {
         text: '微信号：',
         nowtype: false,
         placeholderLabel: '请输入微信号',
-        typeid:'wechatnumber'
+        typeid:'wechatnumber',
+        inputValue: ''
       }, {
         text: '手机号：',
         nowtype: false,
         placeholderLabel: '请输入手机号',
-        typeid:'phonenumber'
+        typeid:'phonenumber',
+        inputValue: ''
       }, {
         text: '邮箱：',
         nowtype: false,
         placeholderLabel: '请输入邮箱',
-        typeid:'mail'
+        typeid:'mail',
+        inputValue: ''
       }, {
         text: '公司网址：',
         nowtype: false,
         placeholderLabel: '请输入公司网址',
-        typeid:'website'
+        typeid:'website',
+        inputValue: ''
       }]
   },
   onLoad:function(options){
     // 生命周期函数--监听页面加载
-    
+    var that = this;
+    var manCheck;
+    var womanCheck;
+    wx.getStorage({
+      key: 'UserCardInfoStorage',
+      success: function (res) {
+        console.log('获取到缓存的用户信息', res.data);
+        if (res.data == null) {
+          return;
+        };
+        if(res.data.sex == "男"){
+          manCheck = 'true';
+          womanCheck = '';
+        }else {
+          manCheck = '';
+          womanCheck = 'true';
+        };
+        //获取到缓存的用户信息之后，并跟新数据
+        that.setData({
+          userListInfo: [{
+            text: '姓名：',
+            nowtype: false,
+            placeholderLabel: '请输入姓名',
+            typeid: 'username',
+            inputValue: res.data.username
+          }, {
+            text: '性别：',
+            placeholderLabel: '请输入性别',
+            nowtype: true,
+            items: [{ name: 'man', value: '男', checked:  manCheck},
+            { name: 'woman', value: '女', checked: womanCheck },]
+          }, {
+            text: '职称：',
+            nowtype: false,
+            placeholderLabel: '请输入职称',
+            typeid: 'profession',
+            inputValue: res.data.profession
+          }, {
+            text: '公司：',
+            nowtype: false,
+            placeholderLabel: '请输入公司',
+            typeid: 'company',
+            inputValue: res.data.company
+          }, {
+            text: '地址：',
+            nowtype: false,
+            placeholderLabel: '请输入地址',
+            typeid: 'address',
+            inputValue: res.data.address
+          }, {
+            text: 'QQ号：',
+            nowtype: false,
+            placeholderLabel: '请输入QQ号',
+            typeid: 'qqnumber',
+            inputValue: res.data.qqnumber
+          }, {
+            text: '微信号：',
+            nowtype: false,
+            placeholderLabel: '请输入微信号',
+            typeid: 'wechatnumber',
+            inputValue: res.data.wechatnumber
+          }, {
+            text: '手机号：',
+            nowtype: false,
+            placeholderLabel: '请输入手机号',
+            typeid: 'phonenumber',
+            inputValue: res.data.phonenumber
+          }, {
+            text: '邮箱：',
+            nowtype: false,
+            placeholderLabel: '请输入邮箱',
+            typeid: 'mail',
+            inputValue: res.data.mail
+          }, {
+            text: '公司网址：',
+            nowtype: false,
+            placeholderLabel: '请输入公司网址',
+            typeid: 'website',
+            inputValue: res.data.website
+          }]
+        })
+      },
+      fail: function(res) {
+        // fail
+      },
+      complete: function(res) {
+        // complete
+      }
+    })
   },
+
+  onShow:function(){
+    // 生命周期函数--监听页面显示
+ 
+  },
+
   radioChange: function(e) {
     console.log('checkbox发生change事件，携带value值为：', e.detail.value);
     if(e.detail.value == 'man'){
@@ -87,9 +192,65 @@ Page({
     }
   },
 
+/**
+ * 保存名片信息，以及上传到服务端
+ */
   saveEventHandle: function(e) {
      console.log('saveEventHandle发生change事件，携带value值为：', e.detail.value);
+     //相关信息不全时，给出必要的提示
+     if(this.data.username == ''){
+       console.log('用户名为空');
+       this.setData({
+          isAlertViewHidden:false,
+          alertContent:'用户名不能为空'
+       })
+       return;
+     }
+     if(this.data.profession == ''){
+       this.setData({
+          isAlertViewHidden:false,
+          alertContent:'职称不能为空'
+       })
+       return;
+     }
+     if(this.data.company == ''){
+       this.setData({
+          isAlertViewHidden:false,
+          alertContent:'公司不能为空'
+       })
+       return;
+     }
+     if(this.data.qqnumber == '' && this.data.wechatnumber == '' && this.data.phonenumber == '' && this.data.mail == ''){
+       this.setData({
+          isAlertViewHidden:false,
+          alertContent:'联系方式必须填其中之一'
+       })
+       return;
+     }
+     this.setData({
+          isAlertViewHidden:true,
+       });
+     //保存名片的信息
+     wx.setStorage({
+       key: "UserCardInfoStorage",
+       data: {
+         username: this.data.username,
+         profession: this.data.profession,
+         company: this.data.company,
+         sex: this.data.sex,
+         describe: this.data.describe,
+         address: this.data.address,
+         qqnumber: this.data.qqnumber,
+         wechatnumber: this.data.wechatnumber,
+         phonenumber: this.data.phonenumber,
+         telephonenumber: this.data.telephonenumber,
+         faxnumber: this.data.faxnumber,
+         website: this.data.website,
+         mail: this.data.mail,
+       }
+     })
      console.log('用户信息：'+ this.data.username + this.data.sex + this.data.profession + this.data.company + this.data.address);
+     //必填的信息不为空时，上传名片信息
     var that = this;
     wx.request({
       url: 'http://viakiba.cn/wxcard/card/insert',
@@ -132,6 +293,9 @@ Page({
     })
   },
 
+/**
+ * 输入框的触发的事件
+ */
   inputEventHandle:function(e) {
       console.log('inputEventHandle发生change事件，携带value值为：' + e.detail.value + e.target.id);
       if(e.target.id == 'username') {
@@ -174,6 +338,9 @@ Page({
       console.log('用户信息：'+ this.data.username + this.data.sex + this.data.profession + this.data.company + this.data.address);
   },
 
+/**
+ * 编辑事件
+ */
   editEventHandle:function(e) {
     console.log(e.currentTarget.id);
     if (e.currentTarget.id == '1') {//id为1时，为编辑按钮
@@ -188,3 +355,5 @@ Page({
   }
 
 })
+
+

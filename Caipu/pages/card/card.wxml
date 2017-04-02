@@ -1,3 +1,4 @@
+<view class="alertView" hidden="{{isAlertViewHidden}}">{{alertContent}}</view>
 <view>
   <scroll-view scroll-y="true" bindscrolltolower="lower" style="height:{{windowHeight}};" lower-threshold="200" scroll-x="false">
    <view wx:for="{{userListInfo}}">
@@ -14,7 +15,7 @@
     <view wx:if="{{!item.nowtype}}">
       <view class="view_text">
         <label class="title">{{item.text}}</label>
-        <input class="write_title" disabled="{{!isEdit}}" placeholder="{{item.placeholderLabel}}" maxlength="30" bindinput="inputEventHandle"  focus="ture" id="{{item.typeid}}" />
+        <input class="write_title" value="{{item.inputValue}}" disabled="{{!isEdit}}" placeholder="{{item.placeholderLabel}}" maxlength="30" bindinput="inputEventHandle"  focus="ture" id="{{item.typeid}}"/>
       </view>
     </view>
    </view> 
