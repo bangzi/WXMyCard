@@ -2,7 +2,7 @@ var app = getApp()
 
 Page({
   data:{
-    title:"成功进入界面",
+    isEdit:false,
     windowHeight: "700px",
     username:"",
     profession:"",
@@ -172,6 +172,19 @@ Page({
           })
       };
       console.log('用户信息：'+ this.data.username + this.data.sex + this.data.profession + this.data.company + this.data.address);
+  },
+
+  editEventHandle:function(e) {
+    console.log(e.currentTarget.id);
+    if (e.currentTarget.id == '1') {//id为1时，为编辑按钮
+      this.setData({
+        isEdit: true
+      })
+    }else{
+      this.setData({
+        isEdit: false
+      })
+    }  
   }
 
 })

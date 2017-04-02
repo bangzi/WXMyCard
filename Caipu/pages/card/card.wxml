@@ -14,12 +14,18 @@
     <view wx:if="{{!item.nowtype}}">
       <view class="view_text">
         <label class="title">{{item.text}}</label>
-        <input class="write_title"  placeholder="{{item.placeholderLabel}}" maxlength="30" bindinput="inputEventHandle"  focus="ture" id="{{item.typeid}}" />
+        <input class="write_title" disabled="{{!isEdit}}" placeholder="{{item.placeholderLabel}}" maxlength="30" bindinput="inputEventHandle"  focus="ture" id="{{item.typeid}}" />
       </view>
     </view>
    </view> 
   </scroll-view>
-  <view>
+  <view class="functionButtonView">
+    <button wx:if="{{!isEdit}}" class="editButton" bindtap="editEventHandle" id="1">
+      编辑
+    </button>
+    <button wx:if="{{isEdit}}" class="editButton" bindtap="editEventHandle" id="0">
+      取消
+    </button>
     <button class="saveButton" bindtap="saveEventHandle">
       保存
     </button>

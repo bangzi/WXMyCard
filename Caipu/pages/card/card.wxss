@@ -30,8 +30,23 @@
     margin-left: 5px;
 }
 
+.functionButtonView {
+    display: flex;
+    justify-content: space-between;
+}
+
+.editButton {
+    margin-top: -150px; 
+    margin-left: 30px;
+    margin-right: 10px;
+    height: 40px;
+    width: 80px;
+}
+
 .saveButton {
     margin-top: -150px;
-    margin-left: 100px;
-    margin-right: 100px;
+    margin-left: 10px;
+    margin-right: 30px;
+    height: 40px;
+    width: 80px;
 }
