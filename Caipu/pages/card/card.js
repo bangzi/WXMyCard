@@ -1,4 +1,4 @@
-var common = require('../../utils/common.js')
+var common = require('../../utils/common.js').userInfo()
 var app = getApp()
 
 Page({
@@ -85,7 +85,6 @@ Page({
     var that = this;
     var manCheck;
     var womanCheck;
-    console.log('获取到缓存的用id:', common.userInfo());
     wx.getStorage({
       key: 'UserCardInfoStorage',
       success: function (res) {
@@ -264,8 +263,8 @@ Page({
     wx.request({
       url: app.globalData.globalUrl + "card/insert",
       data: {
-        openid: '111',
-        classifyid: '1',
+        openid: common.openid,
+        classifyid: common.sessionkey,
         icon: '图片',
         username: that.data.username,
         profession: that.data.profession,
