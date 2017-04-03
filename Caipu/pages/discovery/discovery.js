@@ -32,8 +32,9 @@ Page({
                 console.log("获取设备信息失败" + e);
             }
         });
+
         wx.request({
-            url: "http://viakiba.cn/wxcard/card/list",
+            url: app.globalData.globalUrl + "card/list",//"https://viakiba.cn/wxcard/card/list",
              method: 'POST',
                header: {
                 'content-type': 'application/json'
@@ -44,8 +45,6 @@ Page({
                 pagenum: '0',
                 pagesize: '10',
             },
-           
-          
             success: function (res) {
                 console.log("获取设备信息失败" + res.data);
                 that.setData({

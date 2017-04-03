@@ -1,5 +1,6 @@
 //app.js
 App({
+    
     //生命周期函数--监听小程序初始化
     //当小程序初始化完成时，会触发 onLaunch（全局只触发一次）
     onLaunch: function() {
@@ -7,15 +8,14 @@ App({
         var logs = wx.getStorageSync('logs') || []
         logs.unshift(Date.now())
         wx.setStorageSync('logs', logs)
-
         wx.login({
           success: function (res) {
             if (res.code) {
               console.log('获取用户登录态成功！' + res.errMsg + res.code)
               //发起网络请求
               wx.request({
-                // url: http://ngrok.viakiba.cn/wxcard ,//测试
-                url: 'http://viakiba.cn/wxcard/onlogin', //线上
+                // url:'http://ngrok.viakiba.cn/wxcard/onlogin',//测试
+                url: 'https://viakiba.cn/wxcard/onlogin', //线上
                 data: {
                   code: res.code
                 },
@@ -74,12 +74,9 @@ App({
     },
     globalData: {
         // userInfo:null
-        globalUrl: 'http://viakiba.cn/wxcard/card/',
-        classifyid: null,
-        openid: null,
-        pagenum:null,
-        pagesize: null,
-        result:[]
-
+        globalUrl: 'https://viakiba.cn/wxcard/',
+        globalOpenid: '',
+        globalSessionkey: '',
+        globalTrdsession: ''
     }
 })
