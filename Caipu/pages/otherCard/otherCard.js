@@ -1,12 +1,13 @@
 var app = getApp()
 Page({
     data: {
-        title:null,
+        title: null,
         arr_res: {},
         message: null,
+        isconcern: false,
         request_fail: false
     },
-    onLoad: function(options) {
+    onLoad: function (options) {
         console.log(options.id);
         console.log(options.name);
         // this.setData({
@@ -26,25 +27,25 @@ Page({
 
         //get请求
         wx.request({
-            url: "http://viakiba.cn/wxcard/card/detail",
+            url: app.globalData.globalUrl + "card/detail",
             method: 'POST',
-              header: {
+            header: {
                 'content-type': 'application/json'
             },
             data: {
-                cardid:'842587500642828288',
-                openid:'111'
+                cardid: '842587500642828288',
+                openid: '111'
             },
-            
-            success: function(res) {
+
+            success: function (res) {
                 console.log(res.data);
                 that.setData({
-                    arr_res:res.data.cardDetail
-                })                                              
+                    arr_res: res.data.cardDetail
+                })
                 //  console.log('dedaoshu'+ that.data.arr_res);
-               
+
             },
-            fail: function(error) {
+            fail: function (error) {
                 console.log(error);
                 that.setData({
                     request_fail: true
@@ -52,7 +53,11 @@ Page({
             }
         })
     },
-    html_encode: function(str) {
+    concernOther: function (e) {
+
+
+    },
+    html_encode: function (str) {
         if (str.length == 0) return "";
         str = str.replace(/<h2>/, '');
         str = str.replace(/<h2>/g, '\n\n\n');

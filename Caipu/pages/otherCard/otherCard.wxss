@@ -1,20 +1,26 @@
-.head{
-  display:flex;
-  justify-content:center;
- 
-}
-.userimage{
-    border-radius: 50%;  
-}
-.section{
- display:flex; 
-  justify-content:center;   
-}
-.line{
-    display: flex;
-    flex: 1;
-    height: 2rpx;
-    margin-top: 10rpx;
-    background-color: #757575
+.section-view {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }
 
+.flex-wrp {
+  display: flex;
+  align-items: center;
+}
+
+.userimage {
+  border-radius: 50%;
+}
+
+.line {
+  flex: 1;
+  height: 2rpx;
+  margin-top: 10rpx;
+  background-color: #757575;
+}
+
+.concernButtn {
+  margin-top: 20px;
+  width: 150px;
+}
