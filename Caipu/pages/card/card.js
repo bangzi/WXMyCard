@@ -3,8 +3,6 @@ var app = getApp()
 Page({
   data:{
     isEdit:false,
-    isAlertViewHidden:true,
-    alertContent:'',
     windowHeight: "700px",
     username:"",
     profession:"",
@@ -102,6 +100,15 @@ Page({
         };
         //获取到缓存的用户信息之后，并跟新数据
         that.setData({
+          username: res.data.username,
+          profession: res.data.profession,
+          company: res.data.company,
+          address: res.data.address,
+          qqnumber: res.data.qqnumber,
+          wechatnumber: res.data.wechatnumber,
+          phonenumber: res.data.phonenumber,
+          website: res.data.website,
+          mail: res.data.mail,
           userListInfo: [{
             text: '姓名：',
             nowtype: false,
@@ -200,36 +207,33 @@ Page({
      //相关信息不全时，给出必要的提示
      if(this.data.username == ''){
        console.log('用户名为空');
-       this.setData({
-          isAlertViewHidden:false,
-          alertContent:'用户名不能为空'
-       })
+       wx.showToast({
+         title: '用户名不能为空',
+         icon: 'loading',
+       });
        return;
      }
      if(this.data.profession == ''){
-       this.setData({
-          isAlertViewHidden:false,
-          alertContent:'职称不能为空'
-       })
+       wx.showToast({
+         title: '职称不能为空',
+         icon: 'loading',
+       });
        return;
      }
      if(this.data.company == ''){
-       this.setData({
-          isAlertViewHidden:false,
-          alertContent:'公司不能为空'
-       })
+       wx.showToast({
+         title: '公司不能为空',
+         icon: 'loading',
+       });
        return;
      }
      if(this.data.qqnumber == '' && this.data.wechatnumber == '' && this.data.phonenumber == '' && this.data.mail == ''){
-       this.setData({
-          isAlertViewHidden:false,
-          alertContent:'联系方式必须填其中之一'
-       })
+       wx.showToast({
+         title: '联系方式必须填其中之一',
+         icon: 'loading',
+       });
        return;
      }
-     this.setData({
-          isAlertViewHidden:true,
-       });
      //保存名片的信息
      wx.setStorage({
        key: "UserCardInfoStorage",
@@ -252,6 +256,9 @@ Page({
      console.log('用户信息：'+ this.data.username + this.data.sex + this.data.profession + this.data.company + this.data.address);
      //必填的信息不为空时，上传名片信息
     var that = this;
+    wx.showLoading({
+        title: '保存中',
+      }),
     wx.request({
       url: 'http://viakiba.cn/wxcard/card/insert',
       data: {
@@ -280,14 +287,17 @@ Page({
       },
       success: function(res){
         // success
+        wx.hideLoading(),
         console.log('请求成功' + res.data.messcode)
       },
       fail: function(error) {
         // fail
+        wx.hideLoading(),
         console.log('请求失败' + error)
       },
       complete: function() {
         // complete
+        wx.hideLoading(),
         console.log('请求完成')
       }
     })

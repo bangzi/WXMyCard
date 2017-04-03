@@ -22,11 +22,13 @@ Page( {
         isunread: false,
         unreadNum: 0,
         isOpen: false
-      }, {
-        icon: '../../images/iconfont-help.png',
-        text: '是否公开',
-        isOpen: true
-      }, {
+      }
+      // , {
+      //   icon: '../../images/iconfont-help.png',
+      //   text: '是否公开',
+      //   isOpen: true
+      // }
+      , {
         icon: '../../images/iconfont-kefu.png',
         text: '反馈',
         url:"../../pages/feedback/feedback",

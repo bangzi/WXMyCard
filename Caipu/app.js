@@ -9,10 +9,29 @@ App({
         wx.setStorageSync('logs', logs)
 
         wx.login({
-          success: function(res){
-            if(res.code){
+          success: function (res) {
+            if (res.code) {
               console.log('获取用户登录态成功！' + res.errMsg + res.code)
-            }else {
+              //发起网络请求
+              wx.request({
+                url: 'http://viakiba.cn/wxcard/onlogin',
+                data: {
+                  code: res.code
+                },
+                method: 'POST', 
+                // header: {}, // 设置请求的 header
+                success: function(res){
+                  // success
+                  console.log('上传code成功！', res)
+                },
+                fail: function(res) {
+                  // fail
+                },
+                complete: function(res) {
+                  // complete
+                }
+              })
+            } else {
               console.log('获取用户登录态失败！' + res.errMsg)
             }
           },
