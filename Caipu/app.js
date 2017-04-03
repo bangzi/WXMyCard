@@ -14,7 +14,8 @@ App({
               console.log('获取用户登录态成功！' + res.errMsg + res.code)
               //发起网络请求
               wx.request({
-                url: 'http://ngrok.viakiba.cn/wxcard/onlogin',
+                // url: http://ngrok.viakiba.cn/wxcard ,//测试
+                url: 'http://viakiba.cn/wxcard/onlogin', //线上
                 data: {
                   code: res.code
                 },
@@ -23,7 +24,14 @@ App({
                 success: function(res){
                   // success
                   console.log('上传code成功！', res),
-                  console.log('data', res.data)
+                    wx.setStorage({
+                      key: "TheUserUniqueIdentifierInfo",
+                      data: {
+                        openid: res.data.openid,
+                        sessionkey: res.data.sessionkey,
+                        trdsession: res.data.trdsession
+                      }
+                    })
                 },
                 fail: function(res) {
                   // fail
