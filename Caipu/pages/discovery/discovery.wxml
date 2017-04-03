@@ -5,7 +5,7 @@
 <view wx:if="{{!request_fail}}">
 <view class="main-view-search">
     <view class="view-search">
-        <input class="input" placeholder-class="input-placeholder" placeholder="输入食材或菜名" bindinput="bindSearchInput" />
+        <input class="input" placeholder-class="input-placeholder" placeholder="输入关键信息" bindinput="bindSearchInput" />
         <image class="button" src="../../res/img/search.png" bindtap="tapSearch" />
     </view>
     <view class="request_null" >

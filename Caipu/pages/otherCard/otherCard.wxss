@@ -1,10 +1,20 @@
 .head{
   display:flex;
-  justify-content:center;  
+  justify-content:center;
+ 
+}
+.userimage{
+    border-radius: 50%;  
 }
 .section{
  display:flex; 
   justify-content:center;   
 }
-
+.line{
+    display: flex;
+    flex: 1;
+    height: 2rpx;
+    margin-top: 10rpx;
+    background-color: #757575
+}
 

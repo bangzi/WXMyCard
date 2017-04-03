@@ -10,36 +10,47 @@
       </view>
       <view class="profession">
         <text class="profession_text" style="font-size:30px">专业：{{arr_res.profession}}</text>
+        <view class="line" />
       </view>
       <view class="carddescribe">
         <text class="carddescribe_text" style="font-size:30px">描述：{{arr_res.carddescribe}}</text>
+         <view class="line" />
       </view>
       <view class="company">
         <text class="company_text" style="font-size:30px">公司：{{arr_res.company}}</text>
+         <view class="line" />
       </view>
       <view class="address">
         <text class="address_text" style="font-size:30px">地址：{{arr_res.address}}</text>
+         <view class="line" />
       </view>
       <view class="qqnumber">
         <text class="qqnumber_text" style="font-size:30px">QQ：{{arr_res.qqnumber}}</text>
+         <view class="line" />
       </view>
       <view class="wechatnumber">
         <text class="wechatnumber_text" style="font-size:30px">微信：{{arr_res.wechatnumber}}</text>
+         <view class="line" />
       </view>
       <view class="phonenumber">
-        <text class="phonenumber_text" style="font-size:30px">电话：{{arr_res.phonenumber}}</text>
+        <text class="phonenumber_text" style="font-size:30px">手机：{{arr_res.phonenumber}}</text>
+         <view class="line" />
       </view>
       <view class="telephonenumber">
-        <text class="telephonenumber_text" style="font-size:30px">固定电话：{{arr_res.telephonenumber}}</text>
+        <text class="telephonenumber_text" style="font-size:30px">电话：{{arr_res.telephonenumber}}</text>
+         <view class="line" />
       </view>
       <view class="faxnumber">
         <text class="faxnumber_text" style="font-size:30px">传真：{{arr_res.faxnumber}}</text>
+         <view class="line" />
       </view>
       <view class="website">
         <text class="website_text" style="font-size:30px">网址：{{arr_res.website}}</text>
+         <view class="line" />
       </view>
       <view class="mail">
         <text class=" e-mail_text" style="font-size:30px"> e-mail：{{arr_res.mail}}</text>
+         <view class="line" />
       </view>
     </view>
 

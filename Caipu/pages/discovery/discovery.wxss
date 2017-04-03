@@ -49,28 +49,26 @@
     height: 100rpx;
     margin-left: 20rpx;
     margin-top: 20rpx;
-    border-radius: 10%;
+    border-radius: 50%;
 }
 
 .text {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    margin-right: 2rpx;
-    margin: 20rpx;
+    margin-left: 120rpx;
 }
 
 .title {
-    margin-left: 100px;
-    margin-top:-70px;
+    margin-left: 20rpx;
+    margin-top:-120rpx;
     font-size: 20px;
     color: #000;
 }
 
 .subtitle {
     font-size: 18px;
-    margin-left: 100px;
-    margin-top:-30px;
+    margin-left: 20rpx;
+    margin-top:10px;
     color: #999;
 }
 
