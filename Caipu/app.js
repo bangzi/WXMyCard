@@ -14,7 +14,7 @@ App({
               console.log('获取用户登录态成功！' + res.errMsg + res.code)
               //发起网络请求
               wx.request({
-                url: 'http://viakiba.cn/wxcard/onlogin',
+                url: 'http://ngrok.viakiba.cn/wxcard/onlogin',
                 data: {
                   code: res.code
                 },
@@ -22,13 +22,16 @@ App({
                 // header: {}, // 设置请求的 header
                 success: function(res){
                   // success
-                  console.log('上传code成功！', res)
+                  console.log('上传code成功！', res),
+                  console.log('data', res.data)
                 },
                 fail: function(res) {
                   // fail
+                  console.log('上传code失败！', res)
                 },
                 complete: function(res) {
                   // complete
+                  console.log('上传code完成！', res)
                 }
               })
             } else {
