@@ -35,8 +35,8 @@ Page({
 
         wx.request({
             url: app.globalData.globalUrl + "card/list",//"https://viakiba.cn/wxcard/card/list",
-             method: 'POST',
-               header: {
+            method: 'POST',
+            header: {
                 'content-type': 'application/json'
             },
             data: {
