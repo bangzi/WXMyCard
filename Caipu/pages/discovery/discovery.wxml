@@ -1,31 +1,30 @@
-
 <view class="view-request-fail" wx:if="{{request_fail}}">
-    <text class="text-request-fail">网络或服务器错误，请检查网络...</text>
+  <text class="text-request-fail">网络或服务器错误，请检查网络...</text>
 </view>
 <view wx:if="{{!request_fail}}">
-<view class="main-view-search">
+  <view class="main-view-search">
     <view class="view-search">
-        <input class="input" placeholder-class="input-placeholder" placeholder="输入关键信息" bindinput="bindSearchInput" />
-        <image class="button" src="../../res/img/search.png" bindtap="tapSearch" />
+      <input class="input" placeholder-class="input-placeholder" placeholder="输入关键信息" bindinput="bindSearchInput" />
+      <image class="button" src="../../res/img/search.png" bindtap="tapSearch" />
     </view>
-    <view class="request_null" >
-        <text hidden="{{nullHidden}}">没有搜索结果？</text>
+    <view class="request_null">
+      <text hidden="{{nullHidden}}">没有搜索结果？</text>
     </view>
     <loading hidden="{{loadingHidden}}">{{lodingInfo}}</loading>
-</view>
-    <scroll-view scroll-y="true" bindscrolltolower="lower" style="height:{{windowHeight}};" lower-threshold="200">
+  </view>
+  <scroll-view scroll-y="true" bindscrolltolower="lower" style="height:{{windowHeight}};" lower-threshold="200">
     <view wx:for="{{arr_res}}">
-          <navigator url="{{url}}?cardid={{item.cardid}}&openid={{openid}}" class="home_cell">
-           <view class="head">
-        <image class="img" mode="aspectFill" src="/res/img/tabbar/discovery.png" />
-    </view>
-                <view class="text">
-                    <text class="title">{{item.username}}</text>
-                    <text class="subtitle">{{item.company}}</text>
-                </view>
-         <view class="bottomLine"></view>
+      <navigator url="{{url}}?cardid={{item.cardid}}&openid={{openid}}" class="home_cell">
+        <view class="head">
+          <image class="img" mode="aspectFill" src="/res/img/tabbar/discovery.png" />
+          <view class="text">
+            <text class="title">{{item.username}}</text>
+            <text class="subtitle">{{item.company}}</text>
+          </view>
+        </view>
+        <view class="bottomLine"></view>
       </navigator>
     </view>
-    </scroll-view>
-    <loading hidden="{{loadingHidden}}">{{lodingInfo}}</loading>
+  </scroll-view>
+  <loading hidden="{{loadingHidden}}">{{lodingInfo}}</loading>
 </view>
