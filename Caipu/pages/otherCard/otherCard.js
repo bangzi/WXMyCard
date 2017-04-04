@@ -54,19 +54,36 @@ Page({
         })
     },
     concernOther: function (e) {
+        var that = this;
+        var nowurl;
+        if (e.id == 2) {
+            nowurl: app.globalData.globalUrl + "deletefollow"
+        } else {
+            nowurl: pp.globalData.globalUrl + "insertfollow"
+        }
+        wx.request({
+            url: nowurl,
+            method: 'POST',
+            header: {
+                'content-type': 'application/json'
+            },
+            data: {
+                cardid: options.cardid,
+                openid: options.openid,
+            },
 
-
-    },
-    html_encode: function (str) {
-        if (str.length == 0) return "";
-        str = str.replace(/<h2>/, '');
-        str = str.replace(/<h2>/g, '\n\n\n');
-        str = str.replace(/<p>/g, '\n');
-        str = str.replace(/<\/?[^>]*>/g, ''); //去除HTML tag
-        str = str.replace(/&nbsp;/g, '');
-
-        str.value = str.replace(/[ | ]*\n/g, '\n'); //去除行尾空白
-
-        return str;
+            success: function (res) {
+                that.setData({
+                    isconcern:!that.data.isconcern
+                })
+            },
+            fail: function (error) {
+                console.log(error);
+                that.setData({
+                    request_fail: true
+                })
+            }
+        })
     }
+
 })

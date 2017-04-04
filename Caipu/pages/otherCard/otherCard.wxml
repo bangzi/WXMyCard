@@ -53,8 +53,8 @@
       </view>
     </view>
     <view class="concernButtn">
-      <button wx:if="{{isconcern}}" class="concern" bindtap="concernOther">关注</button>
-      <button wx:if="{{!isconcern}}" class="concern" bindtap="concernOther">取消关注</button>
+      <button wx:if="{{isconcern}}" class="concern" bindtap="concernOther" id="1">关注</button>
+      <button wx:if="{{!isconcern}}" class="concern" bindtap="concernOther" id="2">取消关注</button>
 
     </view>
   </view>

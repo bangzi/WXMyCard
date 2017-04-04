@@ -19,6 +19,7 @@ Page( {
     }, {
         icon: '../../images/iconfont-card.png',
         text: '我的关注',
+        url:"../../pages/concernPage/concernPage",
         isunread: false,
         unreadNum: 0,
         isOpen: false

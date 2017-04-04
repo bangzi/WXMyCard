@@ -9,7 +9,8 @@
         "pages/card/card",
         "pages/feedback/feedback",
         "pages/companyLogo/companyLogo",
-        "pages/otherCard/otherCard"
+        "pages/otherCard/otherCard",
+        "pages/concernPage/concernPage"
     ],
     "window": {
         "backgroundTextStyle": "light",
