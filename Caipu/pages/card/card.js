@@ -3,7 +3,7 @@ var app = getApp()
 
 Page({
   data:{
-    isEdit:false,
+    isEdit:true,
     windowHeight: "700px",
     username:"",
     profession:"",
@@ -101,6 +101,7 @@ Page({
         };
         //获取到缓存的用户信息之后，并跟新数据
         that.setData({
+          isEdit:false,
           username: res.data.username,
           profession: res.data.profession,
           company: res.data.company,
