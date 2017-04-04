@@ -34,7 +34,7 @@ Page({
         });
 
         wx.request({
-            url: app.globalData.globalUrl + "card/list",//"https://viakiba.cn/wxcard/card/list",
+            url: app.globalData.globalUrl + "listUser",//"https://viakiba.cn/wxcard/card/list",
             method: 'POST',
             header: {
                 'content-type': 'application/json'
@@ -43,7 +43,7 @@ Page({
                 classifyid: '1',
                 openid: '111',
                 pagenum: '0',
-                pagesize: '10',
+                pagesize: '3',
             },
             success: function (res) {
                 console.log("获取设备信息失败" + res.data);
