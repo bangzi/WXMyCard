@@ -1,3 +1,4 @@
+var common = require('../../utils/common.js').userInfo()
 var app = getApp()
 var tempFilePaths;
 
@@ -54,11 +55,14 @@ Page({
       }
     });
     
-    wx.request({
-      url: 'https://URL',
-      data: {},
-      method: 'POST', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
+    wx.uploadFile({
+      url: app.globalData.globalUrl + '/extra/uploadlogo',
+      filePath:tempFilePaths[0],
+      name:'logoImage',
       // header: {}, // 设置请求的 header
+      formData: {    // HTTP 请求中其他额外的 form data
+         'openid' : common.openid
+      }, 
       success: function(res){
         // success
       },
@@ -69,7 +73,21 @@ Page({
         // complete
       }
     })
+  },
 
+  onShareAppMessage: function () {
+    return {
+      title: '我的logo',
+      path: '/pages/companyLogo',
+      success: function(res) {
+        // 分享成功
+        console.log('分享成功', res);
+      },
+      fail: function(res) {
+        // 分享失败
+        console.log('分享失败', res);
+      }
+    }
   }
 
 })
