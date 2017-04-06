@@ -15,7 +15,7 @@ App({
               //发起网络请求
               wx.request({
                 // url:'http://ngrok.viakiba.cn/wxcard/onlogin',//测试
-                url: 'https://viakiba.cn/wxcard/onlogin', //线上
+                url: 'https://www.viakiba.cn/wxcard/onlogin', //线上
                 data: {
                   code: res.code
                 },
@@ -74,7 +74,7 @@ App({
     },
     globalData: {
         // userInfo:null
-        globalUrl: 'https://viakiba.cn/wxcard/',
+        globalUrl: 'https://www.viakiba.cn/wxcard/',
         globalOpenid: '',
         globalSessionkey: '',
         globalTrdsession: ''

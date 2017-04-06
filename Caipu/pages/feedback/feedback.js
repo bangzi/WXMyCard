@@ -15,6 +15,10 @@ Page({
   },
    onLoad:function(options){
     // 生命周期函数--监听页面加载
-    
-  },
+   },
+    bindFormSubmit: function(e) {
+    console.log(e.detail.value.describe);
+    console.log(e.detail.value.mail);
+
+  }
 })

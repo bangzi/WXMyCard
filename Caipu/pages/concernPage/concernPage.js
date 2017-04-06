@@ -2,24 +2,26 @@ var app = getApp()
 var common = require('../../utils/common.js').userInfo()
 Page({
     data: {
+        url:"../../pages/otherCard/otherCard",
         arr_res: [],
-
     },
     onLoad: function (options) {
         // 生命周期函数--监听页面加载
-
+        var that=this;
         wx.request({
-            url: app.globalData.globalUrl + "listFollow",
+            url: app.globalData.globalUrl + "listfollow",
+           
             data: {
-                pagenum: '1',
-                pagesize: '1',
-                openid: common.openid
+                pagenum: '0',
+                pagesize: '5',
+                openid: '111'
             },
            method: 'POST',
             success: function (res) {
                 that.setData({
-                    arr_res: res.data,
+                    arr_res: res.data.cardlist
                 });
+                 console.log( app.globalData.globalUrl + "listfollow");
                 console.log(that.data.arr_res);
             },
             fail: function (error) {

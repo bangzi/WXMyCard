@@ -34,19 +34,17 @@ Page({
         });
 
         wx.request({
-            url: app.globalData.globalUrl + "listUser",//"https://viakiba.cn/wxcard/card/list",
+            url: app.globalData.globalUrl + "listuser",//"https://viakiba.cn/wxcard/card/list",
             method: 'POST',
             header: {
-                'content-type': 'application/json'
+                "content-type": 'application/json'
             },
             data: {
-                classifyid: '1',
-                openid: '111',
                 pagenum: '0',
-                pagesize: '3',
+                pagesize: '8',
             },
             success: function (res) {
-                console.log("获取设备信息失败" + res.data);
+                console.log(that.data);
                 that.setData({
                     arr_res: res.data.cardlist,
                 });
@@ -70,13 +68,14 @@ Page({
                 loadingHidden: false
             })
             wx.request({
-                url: app.globalData.globalUrl + "list",
+                url: app.globalData.globalUrl + "listuser",
                 data: {
-                    page: ++number
+                    pagenum: ++number,
+                    pagesize: '8',
                 },
                 success: function (res) {
                     that.setData({
-                        arr_res: that.data.arr_res.concat(res.data.tngou),
+                        arr_res: that.data.arr_res.concat(res.data.arr_res),
                         lodingInfo: "加载更多",
                     });
                     console.log(that.data.arr_res);
