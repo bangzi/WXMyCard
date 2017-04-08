@@ -67,10 +67,22 @@ Page({
         typeid:'phonenumber',
         inputValue: ''
       }, {
+        text: '电话：',
+        nowtype: false,
+        placeholderLabel: '请输入手机号',
+        typeid:'telephonenumber',
+        inputValue: ''
+      }, {
         text: '邮箱：',
         nowtype: false,
         placeholderLabel: '请输入邮箱',
         typeid:'mail',
+        inputValue: ''
+      }, {
+        text: '传真：',
+        nowtype: false,
+        placeholderLabel: '请输入手机号',
+        typeid:'faxnumber',
         inputValue: ''
       }, {
         text: '公司网址：',
@@ -109,6 +121,8 @@ Page({
           qqnumber: res.data.qqnumber,
           wechatnumber: res.data.wechatnumber,
           phonenumber: res.data.phonenumber,
+          telephonenumber: res.data.telephonenumber,
+          faxnumber: res.data.faxnumber,
           website: res.data.website,
           mail: res.data.mail,
           userListInfo: [{
@@ -160,11 +174,23 @@ Page({
             typeid: 'phonenumber',
             inputValue: res.data.phonenumber
           }, {
+            text: '电话：',
+            nowtype: false,
+            placeholderLabel: '请输入手机号',
+            typeid: 'telephonenumber',
+            inputValue: ''
+          }, {
             text: '邮箱：',
             nowtype: false,
             placeholderLabel: '请输入邮箱',
             typeid: 'mail',
             inputValue: res.data.mail
+          }, {
+            text: '传真：',
+            nowtype: false,
+            placeholderLabel: '请输入手机号',
+            typeid: 'faxnumber',
+            inputValue: ''
           }, {
             text: '公司网址：',
             nowtype: false,
@@ -269,8 +295,8 @@ Page({
         icon: '图片',
         username: that.data.username,
         profession: that.data.profession,
-        isconcern: 'ture',
-        describe: '写代码的程序员',
+        gender: that.data.sex,
+        // describe: '写代码的程序员',
         company: that.data.company,
         address: that.data.address,
         qqnumber: that.data.qqnumber,
@@ -280,7 +306,7 @@ Page({
         faxnumber: that.data.faxnumber,
         website: that.data.website,
         mail: that.data.mail,
-        companylogo: '公司logo'
+        // companylogo: '公司logo'
       },
       method: 'POST', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
       // header: {}, // 设置请求的 header
@@ -338,9 +364,17 @@ Page({
           this.setData({
             phonenumber: e.detail.value
           })
+      }else if(e.target.id == 'telephonenumber') {
+          this.setData({
+            telephonenumber: e.detail.value
+          })
       }else if(e.target.id == 'mail') {
           this.setData({
             mail: e.detail.value
+          })
+      }else if(e.target.id == 'faxnumber') {
+          this.setData({
+            faxnumber: e.detail.value
           })
       }else if(e.target.id == 'website') {
           this.setData({

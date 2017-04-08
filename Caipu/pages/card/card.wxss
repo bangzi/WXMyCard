@@ -33,10 +33,11 @@
 .functionButtonView {
     display: flex;
     justify-content: space-between;
+    margin-top: -80px;
 }
 
 .editButton {
-    margin-top: -150px; 
+    /*margin-top: -150px; */
     margin-left: 30px;
     margin-right: 10px;
     height: 40px;
@@ -44,7 +45,7 @@
 }
 
 .saveButton {
-    margin-top: -150px;
+    /*margin-top: -150px;*/
     margin-left: 10px;
     margin-right: 30px;
     height: 40px;
