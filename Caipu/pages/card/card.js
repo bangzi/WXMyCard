@@ -288,7 +288,7 @@ Page({
         title: '保存中',
       }),
     wx.request({
-      url: app.globalData.globalUrl + "card/insert",
+      url: app.globalData.globalUrl + "card/update",
       data: {
         openid: common.openid,
         classifyid: common.sessionkey,
