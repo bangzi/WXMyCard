@@ -1,5 +1,6 @@
 //list.js
 var app = getApp()
+var common = require('../../utils/common.js').userInfo()
 var number = 1
 var isLoading = false
 Page({
@@ -42,6 +43,7 @@ Page({
             data: {
                 pagenum: '0',
                 pagesize: '8',
+                openid:'111'
             },
             success: function (res) {
                 console.log(that.data);

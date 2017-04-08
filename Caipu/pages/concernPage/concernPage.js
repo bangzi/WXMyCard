@@ -13,7 +13,7 @@ Page({
            
             data: {
                 pagenum: '0',
-                pagesize: '5',
+                pagesize: '10',
                 openid: '111'
             },
            method: 'POST',

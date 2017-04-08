@@ -14,7 +14,7 @@
   </view>
   <scroll-view scroll-y="true" bindscrolltolower="lower" style="height:{{windowHeight}};" lower-threshold="200">
     <view wx:for="{{arr_res}}">
-      <navigator url="{{url}}?cardid={{item.cardid}}&openid={{item.openid}}" class="home_cell">
+      <navigator url="{{url}}?address={{item.address}}&cardid={{item.cardid}}&company={{item.company}}&faxnumber={{item.faxnumber}}&icon={{item.icon}}&isconcern={{item.isconcern}}&mail={{item.mail}}&phonenumber={{item.phonenumber}}&profession={{item.profession}}&qqnumber={{item.qqnumber}}&telephonenumber={{item.telephonenumber}}&username={{item.username}}&website={{item.website}}&wechatnumber={{item.wechatnumber}}" class="home_cell">
         <view class="head">
           <image class="img" mode="aspectFill" src="/res/img/tabbar/discovery.png" />
           <view class="text">

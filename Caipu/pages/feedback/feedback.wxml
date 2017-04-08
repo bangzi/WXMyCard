@@ -1,4 +1,4 @@
-<view class="feedback=view">
+<view class="feedback-view">
   <form bindsubmit="bindFormSubmit">
     <text class="describe-title">描述：</text>
     <textarea class="describe-info" bindblur="bindTextAreaBlur" placeholder="{{item.placeholderLabel}}" maxlength="309"  name="describe" />

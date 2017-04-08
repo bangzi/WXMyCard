@@ -1,23 +1,31 @@
-.section-view {
+.flex-wrp{
+  margin-left: 10px;
+}
+.username-view{
   display: flex;
-  justify-content: center;
+  margin-top: 12px;
   flex-direction: column;
+  margin-left: 10px;
 }
-
-.flex-wrp {
+.userinfo{
   display: flex;
-  align-items: center;
+  flex-direction: row;
+  background-color:#dadada;
 }
-.image-view{
-  margin-top: 10px;
+.carddescribe{
+  margin-top: 8px;
 }
 
-.username{
-  margin-top: 25px;
+.profession{
+  margin-top: 20px;
 }
+
 .userimage {
   border-radius: 50%;
+   margin-top: 6px;
+   margin-left: 10px;
 }
+
 
 .line {
   
@@ -30,4 +38,5 @@
 .concernButtn {
   margin-top: 20px;
   width: 150px;
+  margin-left: 125px;
 }
