@@ -19,6 +19,9 @@ Page({
                 pagesize: '10',
                 openid: common.openid
             },
+             header: {
+                "content-type": 'application/x-www-form-urlencoded'
+            },
            method: 'POST',
             success: function (res) {
                 that.setData({

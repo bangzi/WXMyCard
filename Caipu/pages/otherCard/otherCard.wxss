@@ -37,11 +37,15 @@
 }
 
 .concernButtn {
+  display: flex;
   margin-top: 40px;
-  width: 120px;
-  margin-left: 125px;
+
+ justify-content:center;
+
 }
 
 .concern {
   background-color: lightgreen;
+
+
 }
