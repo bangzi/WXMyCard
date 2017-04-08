@@ -43,7 +43,7 @@ Page({
             data: {
                 pagenum: '0',
                 pagesize: '8',
-                openid:'111'
+                openid:common.openid
             },
             success: function (res) {
                 console.log(that.data);

@@ -1,42 +1,47 @@
-.flex-wrp{
+.flex-wrp {
   margin-left: 10px;
 }
-.username-view{
+
+.username-view {
   display: flex;
   margin-top: 12px;
   flex-direction: column;
   margin-left: 10px;
 }
-.userinfo{
+
+.userinfo {
   display: flex;
   flex-direction: row;
-  background-color:#dadada;
+  background-color: #dadada;
 }
-.carddescribe{
+
+.carddescribe {
   margin-top: 8px;
 }
 
-.profession{
+.profession {
   margin-top: 20px;
 }
 
 .userimage {
   border-radius: 50%;
-   margin-top: 6px;
-   margin-left: 10px;
+  margin-top: 6px;
+  margin-left: 10px;
 }
 
-
 .line {
-  
   flex: 1;
   height: 2rpx;
   margin-top: 20rpx;
-  background-color:aliceblue;
+  background-color: rgba(255, 255, 255, 1);
 }
 
 .concernButtn {
-  margin-top: 20px;
-  width: 150px;
+  margin-top: 40px;
+  width: 120px;
   margin-left: 125px;
+}
+
+.concern {
+  background-color: lightgreen;
 }

@@ -1,37 +1,40 @@
-
 .describe-title {
-    display: flex;
-    height: 50rpx;
-    size: 10px;
-    margin-left: 5px;
-}
-.describe-info {
-    display: flex;
-    left: 10px;
-    /*right: 5px;*/
-    margin-right: 5px;
-    height: 200px;
-    width: 96%;  
-}
-.mail-title {
-    display: flex;
-    height: 10px;
-    size: 15px;
-    margin-left: 5px;  
+  display: flex;
+  height: 50rpx;
+  size: 10px;
+  margin-top: 10px;
+  margin-left: 5px;
 }
 
+.describe-info {
+  /*right: 5px;*/
+  height: 200px;
+  width: 100%;
+  background-color: cornsilk;
+   border:  2rpx solid gainsboro;/*边框设计*/
+   padding-top:4px;/*输入内容调整位置*/
+   
+}
+
+.mail-title {
+  display: flex;
+  height: 10px;
+  margin-top: 10px;
+  margin-left: 5px;
+}
 
 .mail-info {
-    left: 10px;
-    /*right: 5px;*/
-    margin-right: 5px;
-     width: 96%; 
-    size: 8px;
-    top: 20px;
- 
+  /*right: 5px;*/
+  width: 100%;
+  margin-top: 20px;
+  background-color: cornsilk;
+  height: 30px;
+  border:  2rpx solid gainsboro;
+  padding-top:9px;
 }
-.section {
-    margin-top: -40px;
-    margin-left: 100px;
-    margin-right: 100px;
+
+.submit {
+  margin-top:30px;
+  width: 30%;
+  background-color:red;
 }

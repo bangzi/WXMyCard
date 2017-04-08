@@ -1,9 +1,9 @@
 <view class="feedback-view">
   <form bindsubmit="bindFormSubmit">
     <text class="describe-title">描述：</text>
-    <textarea class="describe-info" bindblur="bindTextAreaBlur" placeholder="{{item.placeholderLabel}}" maxlength="309"  name="describe" />
-    <text class="mail-title">联系方式</text>
-    <textarea class="mail-info" bindblur="bindTextAreaBlur" placeholder="{{item.placeholderLabel}}" maxlength="30" name="mail"/>
-    <button form-type="submit"> 提交 </button>
+    <textarea class="describe-info"  placeholder="请输入具体描述信息" maxlength="-1"  name="describe" />
+    <text class="mail-title">联系方式:</text>
+    <textarea class="mail-info"  placeholder="请输入您的邮箱" maxlength="35" name="mail"/>
+    <button class="submit"form-type="submit"> 提交 </button>
   </form>
 </view>

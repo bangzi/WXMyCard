@@ -11,7 +11,6 @@ Page({
         request_fail: false
     },
     onLoad: function (options) {
-        console.log(options.item);
         // this.setData({
         //     title:options.name
         // })
