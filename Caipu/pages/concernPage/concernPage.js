@@ -7,7 +7,10 @@ Page({
     },
     onLoad: function (options) {
         // 生命周期函数--监听页面加载
-        var that=this;
+ 
+    },
+    onShow: function (options){
+       var that=this;
         wx.request({
             url: app.globalData.globalUrl + "listfollow",
            

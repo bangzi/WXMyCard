@@ -19,8 +19,49 @@ Page({
     onLoad: function (options) {
         //使number重置为1
         number = 1;
-        console.log(app.globalData.listId);
-        var that = this;
+        // console.log(app.globalData.listId);
+        // var that = this;
+        // wx.getSystemInfo({
+        //     success: function (res) {
+        //         var height = res.windowHeight - 0;
+        //         console.log(height + "px");
+        //         that.setData({
+        //             windowHeight: height + "px"
+        //         })
+        //     },
+        //     fail: function (e) {
+        //         console.log("获取设备信息失败" + e);
+        //     }
+        // });
+
+        // wx.request({
+        //     url: app.globalData.globalUrl + "listuser",//"https://viakiba.cn/wxcard/card/list",
+        //     method: 'POST',
+        //     header: {
+        //         "content-type": 'application/json'
+        //     },
+        //     data: {
+        //         pagenum: '0',
+        //         pagesize: '8',
+        //         openid:common.openid
+        //     },
+        //     success: function (res) {
+        //         console.log(that.data);
+        //         that.setData({
+        //             arr_res: res.data.cardlist,
+        //         });
+        //         console.log(that.data.arr_res);
+        //     },
+        //     fail: function (error) {
+        //         console.log(error);
+        //         that.setData({
+        //             request_fail: true,
+        //         });
+        //     }
+        // })
+    },
+    onShow: function (e){
+          var that = this;
         wx.getSystemInfo({
             success: function (res) {
                 var height = res.windowHeight - 0;
