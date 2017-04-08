@@ -14,7 +14,7 @@ Page({
             data: {
                 pagenum: '0',
                 pagesize: '10',
-                openid: '111'
+                openid: common.openid
             },
            method: 'POST',
             success: function (res) {
