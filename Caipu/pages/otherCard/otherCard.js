@@ -5,20 +5,19 @@ Page({
     data: {
         arr_res: {},
         request_fail: false,
-        isconcern:false
-
+        isconcern:0
     },
     onLoad: function (options) {
         // this.setData({
         //     title:options.name
         // })
+        console.log(options.isconcern);
         this.setData({
             arr_res: {
                 address: options.address,
                 company: options.company,
                 faxnumber: options.faxnumber,
                 icon: options.icon,
-                isconcern: options.isconcern,
                 mail: options.mail,
                 phonenumber: options.phonenumber,
                 profession: options.profession,
@@ -30,12 +29,14 @@ Page({
                 companylogo: options.companylogo,
                 cardid:options.cardid
             },
+             isconcern:parseInt(options.isconcern)
         })
     },
     concernOther: function () {
         var that = this;
         var nowurl;//数据的初始化
         console.log(that.data.arr_res);
+        console.log(that.data.isconcern);
         console.log(that.data.arr_res.cardid);
         if (that.data.isconcern) {
             nowurl = app.globalData.globalUrl + "deletefollow"//赋值符号
