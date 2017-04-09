@@ -292,13 +292,13 @@ Page({
       data: {
         openid: common.openid,
         classifyid: common.sessionkey,
-        icon: '图片',
-        username: that.data.username,
-        profession: that.data.profession,
-        gender: that.data.sex,
+        // icon: '图片',
+        username: encodeURI(that.data.username),
+        profession: encodeURI(that.data.profession),
+        gender: encodeURI(that.data.sex),
         // describe: '写代码的程序员',
-        company: that.data.company,
-        address: that.data.address,
+        company: encodeURI(that.data.company),
+        address: encodeURI(that.data.address),
         qqnumber: that.data.qqnumber,
         wechatnumber: that.data.wechatnumber,
         phonenumber: that.data.phonenumber,
@@ -311,8 +311,8 @@ Page({
       method: 'POST', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
       // header: {}, // 设置请求的 header
       header: {
-      'charset':'utf-8',
-      "content-type":'application/x-www-form-urlencoded'
+      // 'charset':'utf-8',
+      "content-type":'application/json'
       },
       success: function(res){
         // success
