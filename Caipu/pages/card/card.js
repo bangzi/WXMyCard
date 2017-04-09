@@ -178,7 +178,7 @@ Page({
             nowtype: false,
             placeholderLabel: '请输入手机号',
             typeid: 'telephonenumber',
-            inputValue: ''
+            inputValue: res.data.telephonenumber
           }, {
             text: '邮箱：',
             nowtype: false,
@@ -190,7 +190,7 @@ Page({
             nowtype: false,
             placeholderLabel: '请输入手机号',
             typeid: 'faxnumber',
-            inputValue: ''
+            inputValue: res.data.faxnumber
           }, {
             text: '公司网址：',
             nowtype: false,
@@ -291,14 +291,14 @@ Page({
       url: app.globalData.globalUrl + "card/update",
       data: {
         openid: common.openid,
-        classifyid: common.sessionkey,
+        classifyid: common.userid,
         // icon: '图片',
-        username: encodeURI(that.data.username),
-        profession: encodeURI(that.data.profession),
-        gender: encodeURI(that.data.sex),
+        username: that.data.username,
+        profession: that.data.profession,
+        gender: that.data.sex,
         // describe: '写代码的程序员',
-        company: encodeURI(that.data.company),
-        address: encodeURI(that.data.address),
+        company: that.data.company,
+        address: that.data.address,
         qqnumber: that.data.qqnumber,
         wechatnumber: that.data.wechatnumber,
         phonenumber: that.data.phonenumber,

@@ -48,26 +48,30 @@ Page({
 
   uploadCompanyLogo:function(e) {
     wx.saveFile({
-      tempFilePath: tempFilePaths[0],
+      tempFilePath: this.data.srcLogoUrl,
       success: function (res) {
         var savedFilePath = res.savedFilePath;
         console.log('图片的路径：' + savedFilePath)
       }
     });
-    
     wx.uploadFile({
-      url: app.globalData.globalUrl + '/extra/uploadlogo',
-      filePath:tempFilePaths[0],
-      name:'logoImage',
-      // header: {}, // 设置请求的 header
+      url: app.globalData.globalUrl + 'extra/uploadlogo/' + common.openid,
+      filePath: this.data.srcLogoUrl,
+      name:'file',
+      method:'POST',
+      header: {
+        "content-type": 'multipart/form-data'
+      }, // 设置请求的 header
       formData: {    // HTTP 请求中其他额外的 form data
-         'openid' : common.openid
+        //  'openid' : common.openid
       }, 
       success: function(res){
         // success
+        console.log('上传logo成功', res)
       },
       fail: function(res) {
         // fail
+        console.log('上传logo失败', res)
       },
       complete: function(res) {
         // complete

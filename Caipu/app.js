@@ -29,7 +29,8 @@ App({
                   data: {
                     openid: res.data.openid,
                     sessionkey: res.data.sessionkey,
-                    trdsession: res.data.trdsession
+                    trdsession: res.data.trdsession,
+                    userid: res.data.userid
                   }
                 })
             },
