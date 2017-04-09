@@ -77,7 +77,7 @@ App({
     // userInfo:null
     globalUrl: 'https://www.viakiba.cn/wxcard/', 
     // globalUrl: 'http://ngrok.viakiba.cn/wxcard/',
-
+    globalImageUrl: 'https://www.viakiba.cn/images/wxcard/',
     globalOpenid: '',
     globalSessionkey: '',
     globalTrdsession: ''

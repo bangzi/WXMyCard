@@ -15,6 +15,7 @@ Page({
         nullHidden: true,
         lodingInfo: "正在搜索",
         isConcern: false,
+        logoImageUrl: app.globalData.globalImageUrl,
     },
     onLoad: function (options) {
         //使number重置为1
