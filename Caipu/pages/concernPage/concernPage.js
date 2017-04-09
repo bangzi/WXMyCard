@@ -20,7 +20,7 @@ Page({
                 openid: common.openid
             },
              header: {
-                "content-type": 'application/x-www-form-urlencoded'
+                "content-type": 'application/json'
             },
            method: 'POST',
             success: function (res) {
