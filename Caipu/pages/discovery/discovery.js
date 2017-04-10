@@ -61,8 +61,8 @@ Page({
         //     }
         // })
     },
-    onShow: function (e){
-          var that = this;
+    onShow: function (e) {
+        var that = this;
         wx.getSystemInfo({
             success: function (res) {
                 var height = res.windowHeight - 0;
@@ -85,7 +85,7 @@ Page({
             data: {
                 pagenum: '0',
                 pagesize: '8',
-                openid:common.openid
+                openid: common.openid
             },
             success: function (res) {
                 console.log(that.data);
@@ -159,18 +159,23 @@ Page({
             lodingInfo: "正在搜索"
         })
         wx.request({
-            url: app.globalData.globalUrl + "name",
+            url: app.globalData.globalUrl + "listuser",
+            method:'POST',
             data: {
-                name: that.data.input_value,
+                pagenum: '0',
+                pagesize: '8',
+                openid: common.openid,
+                keywords: that.data.input_value
             },
             success: function (res) {
-                if (res.data.tngou.length == 0) {
+                 console.log("sgdjhgdjh");
+                if (res.data.length == 0) {
                     that.setData({
                         nullHidden: false,
                     })
                 } else {
-                    console.log(res.data.tngou);
-                    app.globalData.result = res.data.tngou
+                    console.log(res.data);
+                    app.globalData.result = res.data
                     wx.navigateTo({
                         url: "../../pages/result/result"
                     });

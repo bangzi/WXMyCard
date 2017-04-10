@@ -30,7 +30,7 @@
   background-color: cornsilk;
   height: 30px;
   border:  2rpx solid gainsboro;
-  padding-top:9px;
+  padding-top:2px;
 }
 
 .submit {

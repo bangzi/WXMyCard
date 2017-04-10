@@ -3,14 +3,39 @@ var app = getApp()
 Page({
     data: {
         arr_res: [],
-        url:"../../pages/content/content"
+        url: "../../pages/otherCard/otherCard",
+        logoImageUrl: app.globalData.globalImageUrl
     },
-    onLoad: function(options) {
-        this.setData({
-            arr_res: app.globalData.result,
-        })
-        console.log(this.data.arr_res);
+    onLoad: function (options) {
+        // if (app.globalData.result == {}) {
+        //     wx.showToast({
+        //         title: '无匹配信息',
+        //         duration: 2000
+        //     })
+        // } else {
+        //     this.setData({
+        //         arr_res: app.globalData.result.cardlist,
+        //     })
+        //     console.log(this.data.arr_res);
+        // }
+
     },
+    onShow: function () {
+        
+        if (app.globalData.result.cardlist.length ==0) {
+            console.log("fhajfhajkhfakj");
+            wx.showToast({
+                title: '无匹配信息',
+                duration: 2000
+            })
+        } else {
+            this.setData({
+                arr_res: app.globalData.result.cardlist,
+            })
+            console.log(this.data.arr_res);
+        }
+
+    }
     // //点击事件监听
     // tapItem: function(event) {
     //     app.globalData.contentId = event.target.id;

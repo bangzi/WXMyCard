@@ -80,6 +80,7 @@ App({
     globalImageUrl: 'https://www.viakiba.cn/images/wxcard/',
     globalOpenid: '',
     globalSessionkey: '',
-    globalTrdsession: ''
+    globalTrdsession: '',
+    result:{}
   }
 })

@@ -1,31 +1,49 @@
-.main {
+.main-view{
+    display: flex;
+}
+.home_cell {
+    margin-right: 0px;
+    height: 80px;
+}
+
+.head {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
-    height: auto;
+    height: 80px;
+    /*border-bottom: 1px solid #dadada;*/
 }
 
 .img {
-    width: 120rpx;
-    height: 90rpx;
+    width: 100rpx;
+    height: 100rpx;
     margin-left: 20rpx;
+    border-radius: 50%;
 }
 
 .text {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    margin-right: 20rpx;
-    margin: 20rpx;
+    margin-left: 30rpx;
 }
 
 .title {
+    margin-top:20rpx;
     font-size: 20px;
     color: #000;
 }
 
 .subtitle {
     font-size: 18px;
+    margin-top:10px;
     color: #999;
+}
+.bottomLine {
+    display: flex;
+    flex-direction: column;
+    height: 1px;
+    width: 1000px;
+    top: -30px;
+    background-color: #dadada;
 }

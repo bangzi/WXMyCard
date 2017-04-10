@@ -1,11 +1,17 @@
-<view>
-    <navigator wx:for="{{arr_res}}" url="{{url}}?id={{item.id}}&name={{item.name}}">
-        <view class="main">
-            <image class="img" src="http://tnfs.tngou.net/image{{item.img}}" />
-            <view class="text">
-                <text i class="title">{{item.name}}</text>
-                <text class="subtitle">{{item.keywords}}</text>
-            </view>
+<view class="main-view">
+  <scroll-view scroll-y="true">
+    <view wx:for="{{arr_res}}" wx:if="{{item.username!=null}}">
+      <navigator url="{{url}}?address={{item.address}}&cardid={{item.cardid}}&company={{item.company}}&faxnumber={{item.faxnumber}}&companylogo={{item.companylogo}}&isconcern={{item.isconcern}}&mail={{item.mail}}&phonenumber={{item.phonenumber}}&profession={{item.profession}}&qqnumber={{item.qqnumber}}&telephonenumber={{item.telephonenumber}}&username={{item.username}}&website={{item.website}}&wechatnumber={{item.wechatnumber}}"class="home_cell">
+        <view class="head">
+          <image class="img" wx:if="{{item.companylogo==null}}" mode="aspectFill" src="/res/img/tabbar/discovery.png" />
+          <image class="img" wx:if="{{item.companylogo!=null}}" mode="aspectFill" src="{{logoImageUrl + item.cardid + item.companylogo}}" />
+          <view class="text">
+            <text class="title">{{item.username}}</text>
+            <text class="subtitle">{{item.company}}</text>
+          </view>
         </view>
-    </navigator>
+        <view class="bottomLine"></view>
+      </navigator>
+    </view>
+  </scroll-view>
 </view>
