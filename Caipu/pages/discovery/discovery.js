@@ -88,7 +88,7 @@ Page({
                 openid: common.openid
             },
             success: function (res) {
-                console.log(that.data);
+                // console.log(that.data);
                 that.setData({
                     arr_res: res.data.cardlist,
                 });

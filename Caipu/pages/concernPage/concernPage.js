@@ -4,6 +4,7 @@ Page({
     data: {
         url:"../../pages/otherCard/otherCard",
         arr_res: [],
+        logoImageUrl: app.globalData.globalImageUrl,
     },
     onLoad: function (options) {
         // 生命周期函数--监听页面加载

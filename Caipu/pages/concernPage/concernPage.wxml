@@ -2,10 +2,11 @@
     <text class="text-request-fail">网络或服务器错误，请检查网络...</text>
 </view>
   <scroll-view scroll-y="true" bindscrolltolower="lower" style="height:{{windowHeight}};" lower-threshold="200">
-    <view >
+    <view wx:for="{{arr_res}}">
       <navigator url="{{url}}?address={{item.address}}&cardid={{item.cardid}}&company={{item.company}}&companylogo={{item.companylogo}}&faxnumber={{item.faxnumber}}&icon={{item.icon}}&isconcern={{1}}&mail={{item.mail}}&phonenumber={{item.phonenumber}}&profession={{item.profession}}&qqnumber={{item.qqnumber}}&telephonenumber={{item.telephonenumber}}&username={{item.username}}&website={{item.website}}&wechatnumber={{item.wechatnumber}}" class="home_cell">
         <view class="head">
-          <image class="img" mode="aspectFill" src="/res/img/tabbar/discovery.png" />
+         <image class="img" wx:if="{{item.companylogo==null}}" mode="aspectFill" src="/res/img/tabbar/discovery.png" />
+          <image class="img" wx:if="{{item.companylogo!=null}}" mode="aspectFill" src="{{logoImageUrl + item.cardid + item.companylogo}}" />
           <view class="text">
             <text class="title">{{item.username}}</text>
             <text class="subtitle">{{item.company}}</text>
