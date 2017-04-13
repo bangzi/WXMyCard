@@ -18,6 +18,7 @@ Page({
     faxnumber:"",
     website:"",
     mail:"",
+    userInfo:[],
     userListInfo: [ {
         text: '姓名：',
         nowtype: false,
@@ -290,6 +291,7 @@ Page({
     wx.request({
       url: app.globalData.globalUrl + "card/update",
       data: {
+        // icon:that.data.userInfo.avatarUrl,
         openid: common.openid,
         classifyid: common.userid,
         // icon: '图片',

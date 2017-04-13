@@ -1,7 +1,7 @@
 <view class="section-view">
   <view class="userinfo">
     <view class="image-view">
-      <image class="userimage" style="width: 60px; height: 60px; background-color: #eeeeee;" mode="aspectFill" src="/res/img/tabbar/discovery.png" />
+      <image class="userimage" style="width: 60px; height: 60px; background-color: #eeeeee;" mode="aspectFill" src="{{logoImageUrl+arr_res.icon}}" />
     </view>
     <view class="username-view">
       <view class="username">
@@ -12,7 +12,7 @@
       </view>
     </view>
   </view>
-  <view class="flex-wrp" >
+  <view class="flex-wrp">
     <view class="profession">
       <text class="profession_text">专业：{{arr_res.profession}}</text>
       <view class="line" />

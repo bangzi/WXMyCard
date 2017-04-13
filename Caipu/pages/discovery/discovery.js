@@ -16,6 +16,8 @@ Page({
         lodingInfo: "正在搜索",
         isConcern: false,
         logoImageUrl: app.globalData.globalImageUrl,
+        userInfo: {},
+        iconUrl: ''
     },
     onLoad: function (options) {
         //使number重置为1
@@ -60,9 +62,38 @@ Page({
         //         });
         //     }
         // })
+        var that = this;
+        app.getUserInfo(function (res) {
+            //更新数据
+            that.setData({
+                userInfo: res
+            })
+            console.log(that.data.userInfo);
+                wx.request({        
+            url: "https://www.viakiba.cn/wxcard/updateicon",
+            data: {
+               openid: common.openid,
+            iconurl: that.data.userInfo.avatarUrl
+            },
+           
+            method: 'POST', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
+            // header: {}, // 设置请求的 header
+            success: function (res) {
+             console.log(res.data);
+               
+            },
+            fail: function (res) {
+               console.log("fail");
+            },
+           
+        })
+        })
+    
     },
     onShow: function (e) {
         var that = this;
+
+
         wx.getSystemInfo({
             success: function (res) {
                 var height = res.windowHeight - 0;
@@ -160,7 +191,7 @@ Page({
         })
         wx.request({
             url: app.globalData.globalUrl + "listuser",
-            method:'POST',
+            method: 'POST',
             data: {
                 pagenum: '0',
                 pagesize: '8',
@@ -168,7 +199,7 @@ Page({
                 keywords: that.data.input_value
             },
             success: function (res) {
-                 console.log("sgdjhgdjh");
+                console.log("sgdjhgdjh");
                 if (res.data.length == 0) {
                     that.setData({
                         nullHidden: false,

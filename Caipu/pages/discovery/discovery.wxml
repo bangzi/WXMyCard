@@ -13,11 +13,16 @@
     <loading hidden="{{loadingHidden}}">{{lodingInfo}}</loading>
   </view>
   <scroll-view scroll-y="true" bindscrolltolower="lower" style="height:{{windowHeight}};" lower-threshold="200">
-    <view wx:for="{{arr_res}}" wx:if="{{item.cardid!=item.userid &&item.username!=null}}">
-      <navigator url="{{url}}?address={{item.address}}&cardid={{item.cardid}}&company={{item.company}}&faxnumber={{item.faxnumber}}&companylogo={{item.companylogo}}&isconcern={{item.isconcern}}&mail={{item.mail}}&phonenumber={{item.phonenumber}}&profession={{item.profession}}&qqnumber={{item.qqnumber}}&telephonenumber={{item.telephonenumber}}&username={{item.username}}&website={{item.website}}&wechatnumber={{item.wechatnumber}}" class="home_cell">
+
+    <!--<view wx:for="{{arr_res}}" wx:if="{{item.cardid!=item.userid &&item.username!=null}}">-->
+    <view wx:for="{{arr_res}}" wx:if="{{item.username!=null}}">
+      <navigator url="{{url}}?address={{item.address}}&icon={{item.icon}}&cardid={{item.cardid}}&company={{item.company}}&faxnumber={{item.faxnumber}}&companylogo={{item.companylogo}}&isconcern={{item.isconcern}}&mail={{item.mail}}&phonenumber={{item.phonenumber}}&profession={{item.profession}}&qqnumber={{item.qqnumber}}&telephonenumber={{item.telephonenumber}}&username={{item.username}}&website={{item.website}}&wechatnumber={{item.wechatnumber}}"
+      class="home_cell">
         <view class="head">
-          <image class="img" wx:if="{{item.companylogo==null}}" mode="aspectFill" src="/res/img/tabbar/discovery.png" />
-          <image class="img" wx:if="{{item.companylogo!=null}}" mode="aspectFill" src="{{logoImageUrl + item.cardid + item.companylogo}}" />
+
+          <!--<image class="img" wx:if="{{item.companylogo==null}}" mode="aspectFill" src="/res/img/tabbar/discovery.png" />
+          <image class="img" wx:if="{{item.companylogo!=null}}" mode="aspectFill" src="{{logoImageUrl + item.cardid + item.companylogo}}" />-->
+          <image class="img" mode="aspectFill" src="{{logoImageUrl+item.icon}}" />
           <view class="text">
             <text class="title">{{item.username}}</text>
             <text class="subtitle">{{item.company}}</text>

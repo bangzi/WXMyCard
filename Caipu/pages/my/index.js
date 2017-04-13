@@ -45,21 +45,36 @@ Page({
       that.setData({
         userInfo: res
       })
-      console.log(that.data.userInfo);
+      // console.log(that.data.userInfo);
     })
   },
 
   onShow: function () {
     var that = this;
-    console.log(that.data.userInfo);
+    // console.log(that.data.userInfo);
     // wx.downloadFile({
     //   url: that.data.userInfo.avatarUrl, //仅为示例，并非真实的资源
     //   success: function (res) {
     //     filePath: res.tempFilePath
     //   }
     // })
-  },
 
+
+  },
+bindViewTap:function(){
+wx.navigateTo({
+  url: '../../pages/card/card',
+  success: function(res){
+    // success
+  },
+  fail: function(res) {
+    // fail
+  },
+  complete: function(res) {
+    // complete
+  }
+})
+},
 
   switchEventHandle: function (e) {
     console.log('switch的值改变', e.detail.value)

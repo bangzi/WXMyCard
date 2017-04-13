@@ -5,13 +5,15 @@ Page({
     data: {
         arr_res: {},
         request_fail: false,
-        isconcern:0
+        isconcern:0,
+        logoImageUrl: app.globalData.globalImageUrl,
     },
     onLoad: function (options) {
         // this.setData({
         //     title:options.name
         // })
         console.log(options.isconcern);
+        console.log(options);
         this.setData({
             arr_res: {
                 address: options.address,
