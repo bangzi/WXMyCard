@@ -10,8 +10,10 @@
   padding: 5rpx;
   align-items: center;
   background-color: white;
-  border: 1px solid black;
+  border: 1px solid cornflowerblue;
   border-radius: 15px;
+  margin-left: 5px;
+  margin-right: 5px;
 }
 
 .input {
